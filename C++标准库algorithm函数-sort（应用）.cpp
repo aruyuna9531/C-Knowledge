@@ -56,10 +56,8 @@ int main(){
 	int cp_int[100]={0};
 	srand(time(NULL));
 	for(i=0;i<100;i++)cp_int[i]=rand();
-	cout<<"排序前"<<endl;
 	for(i=0;i<100;i++)cout<<cp_int[i]<<",";
 	cout<<endl;
-	cout<<"排序后"<<endl;
 	sort(cp_int, cp_int+100);		//100个数字全部排序，从小到大
 	for(i=0;i<100;i++)cout<<cp_int[i]<<",";
 	cout<<endl;
@@ -76,12 +74,10 @@ int main(){
 	s.push_back(s4);
 	string s5("aiblaiworiu");
 	s.push_back(s5);
-	cout<<"排序前"<<endl;
 	for(i=0;i<s.size();i++)cout<<s[i].c_str()<<",";
 	cout<<endl;
 	sort(s.begin(), s.end(), compare_string);		//vector排序用begin和end，如果对部分排序用begin+i和begin+j（i和j是比较部分下标）
 	//结果应为原s4,s5,s3,s1,s2
-	cout<<"排序结果"<<endl;
 	for(i=0;i<s.size();i++)cout<<s[i].c_str()<<",";
 	cout<<endl;
 
@@ -95,10 +91,8 @@ int main(){
 	x.push_back(b);
 	x.push_back(c);
 	x.push_back(d);
-	printf("排序前\n");
 	for(i=0;i<x.size();i++)x[i].print();
-	sort(x.begin(), x.end(), compare);
-	printf("排序后\n");
+	sort(x.begin(), x.end());
 	for(i=0;i<x.size();i++)x[i].print();
 	//结果：425,234,313,000
 
