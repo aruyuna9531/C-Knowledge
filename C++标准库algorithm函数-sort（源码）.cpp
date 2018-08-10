@@ -21,7 +21,7 @@ void _Sort_0(RandomAccessIterator first, RandomAccessIterator last, Compare comp
 	if (last - first <= _SORT_MAX)                 //原algorithm库里，_SORT_MAX=16
 		_Insertion_sort(first, last, comp);            //如果排序元素个数小于等于_SORT_MAX个，那么使用插入排序算法
 	else{
-		_Sort(first, last, comp, (_Ty *)0);            //大于_SORT_MAX个元素时，先使用（？）排序算法
+		_Sort(first, last, comp, (_Ty *)0);            //大于_SORT_MAX个元素时，先使用快速排序算法
 		_Insertion_sort(first, first + _SORT_MAX, comp);//前_SORT_MAX个元素采用插入排序算法
 		for (first += _SORT_MAX; first != last; ++first)
 			_Unguarded_insert(first, _Ty(*first), comp);  //从_SORT_MAX开始到最后一个为止，采用Unguarded_insert
